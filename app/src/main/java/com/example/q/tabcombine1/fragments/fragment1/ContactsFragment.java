@@ -1,18 +1,24 @@
 package com.example.q.tabcombine1.fragments.fragment1;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
+import android.widget.TwoLineListItem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +63,10 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 
         mBtnAddress.setOnClickListener(this);
+
+        ListView listView = getActivity().findViewById(R.id.listview);
+        listView.setOnItemClickListener(mCallHandler);
+
     }
 
     @Override
@@ -113,5 +123,23 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
                 mListview.setAdapter(adapter);
         }
     }
+
+    private AdapterView.OnItemClickListener mCallHandler = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            String contactinfo = ((TwoLineListItem)view).getText2().getText().toString();
+            //Intent intent = new Intent(getActivity().getApplicationContext(), CallActivity.class);
+            //intent.putExtra("contactinfo", contactinfo);
+            //startActivity(intent);
+            contactinfo = "tel:"+contactinfo;
+            Intent callintent = new Intent(Intent.ACTION_CALL);
+            callintent.setData(Uri.parse(contactinfo));
+            /*if (ActivityCompat.checkSelfPermission(this,
+                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }*/
+            startActivity(callintent);
+        }
+    };
 
 }

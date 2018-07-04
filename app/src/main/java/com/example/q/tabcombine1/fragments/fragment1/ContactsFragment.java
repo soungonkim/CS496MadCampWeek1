@@ -16,6 +16,7 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import com.example.q.tabcombine1.R;
 
 //import com.example.q.tabcombine1.activity.SimpleTabsActivity;
@@ -23,7 +24,7 @@ import com.example.q.tabcombine1.R;
 //import info.androidhive.materialtabs.activity.SimpleTabsActivity;
 
 
-public class ContactsFragment extends Fragment implements View.OnClickListener{
+public class ContactsFragment extends Fragment implements View.OnClickListener {
 
     ArrayList<Map<String, String>> dataList;
     ListView mListview;
@@ -60,9 +61,10 @@ public class ContactsFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        mListview =  getView().findViewById(R.id.listview);
-        mBtnAddress =  getView().findViewById(R.id.btnAddress);
+        mListview = getView().findViewById(R.id.listview);
+        mBtnAddress = getView().findViewById(R.id.btnAddress);
     }
+
     public void onClick(View v) {
 
         //SimpleTabsActivity activity = (SimpleTabsActivity) getActivity();

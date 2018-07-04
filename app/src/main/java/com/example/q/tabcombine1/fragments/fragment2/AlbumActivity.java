@@ -21,12 +21,13 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.q.tabcombine1.R;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-public class AlbumActivity extends AppCompatActivity{
+public class AlbumActivity extends AppCompatActivity {
     GridView galleryGridView;
     ArrayList<HashMap<String, String>> imageList = new ArrayList<HashMap<String, String>>();
     String album_name = "";
@@ -34,7 +35,7 @@ public class AlbumActivity extends AppCompatActivity{
 
     //시작
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_gallery_activity_album);
 
@@ -48,7 +49,7 @@ public class AlbumActivity extends AppCompatActivity{
         DisplayMetrics metrics = resources.getDisplayMetrics();
         float dp = iDisplayWidth / (metrics.densityDpi / 160f);
 
-        if (dp < 360){
+        if (dp < 360) {
             dp = (dp - 17) / 2;
             float px = Function.convertDpToPixel(dp, getApplicationContext());
             galleryGridView.setColumnWidth(Math.round(px));
@@ -61,12 +62,12 @@ public class AlbumActivity extends AppCompatActivity{
 
     class LoadAlbumImages extends AsyncTask<String, Void, String> {
         @Override
-        protected void onPreExecute(){
+        protected void onPreExecute() {
             super.onPreExecute();
             imageList.clear();
         }
 
-        protected String doInBackground(String... args){
+        protected String doInBackground(String... args) {
             String xml = "";
             String path = null;
             String album = null;
@@ -76,10 +77,10 @@ public class AlbumActivity extends AppCompatActivity{
 
             String[] projection = {MediaStore.MediaColumns.DATA, MediaStore.Images.Media.BUCKET_DISPLAY_NAME, MediaStore.MediaColumns.DATE_MODIFIED};
 
-            Cursor cursorExternal = getContentResolver().query(uriExternal, projection, "bucket_display_name=\"" + album_name+"\"", null, null);
-            Cursor cursorInternal = getContentResolver().query(uriInternal, projection, "bucket_display_name = \""+album_name+"\"", null, null);
+            Cursor cursorExternal = getContentResolver().query(uriExternal, projection, "bucket_display_name=\"" + album_name + "\"", null, null);
+            Cursor cursorInternal = getContentResolver().query(uriInternal, projection, "bucket_display_name = \"" + album_name + "\"", null, null);
             Cursor cursor = new MergeCursor(new Cursor[]{cursorExternal, cursorInternal});
-            while (cursor.moveToNext()){
+            while (cursor.moveToNext()) {
 
                 path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA));
                 album = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
@@ -109,19 +110,23 @@ public class AlbumActivity extends AppCompatActivity{
     }
 }
 
-class SingleAlbumAdapter extends BaseAdapter{
+class SingleAlbumAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;
-    public SingleAlbumAdapter(Activity a, ArrayList <HashMap<String, String>>d){
+
+    public SingleAlbumAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
         activity = a;
         data = d;
     }
+
     public int getCount() {
         return data.size();
     }
+
     public Object getItem(int position) {
         return position;
     }
+
     public long getItemId(int position) {
         return position;
     }
@@ -141,7 +146,7 @@ class SingleAlbumAdapter extends BaseAdapter{
         }
         holder.galleryImage.setId(position);
 
-        HashMap < String, String > song = new HashMap < String, String > ();
+        HashMap<String, String> song = new HashMap<String, String>();
         song = data.get(position);
         try {
 
@@ -150,7 +155,8 @@ class SingleAlbumAdapter extends BaseAdapter{
                     .into(holder.galleryImage);
 
 
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
         return convertView;
     }
 }

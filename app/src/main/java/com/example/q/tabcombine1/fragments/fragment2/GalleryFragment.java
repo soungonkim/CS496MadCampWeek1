@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.ActivityNotFoundException;
+
 import com.bumptech.glide.Glide;
 
 import java.io.File;
@@ -38,7 +39,7 @@ import com.example.q.tabcombine1.R;
 public class GalleryFragment extends Fragment {
     static final int REQUEST_PERMISSION_KEY = 1;
     private static final int TAKE_PHOTO = 1;
-        LoadAlbum loadAlbumTask;
+    LoadAlbum loadAlbumTask;
     GridView galleryGridView;
     ArrayList<HashMap<String, String>> albumList = new ArrayList<HashMap<String, String>>(); //앨범 리스트를 ArrayList로 받는다.
 
@@ -60,8 +61,8 @@ public class GalleryFragment extends Fragment {
 
 //    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        View view = inflater.inflate(R.layout.fragment_gallery, container, false);
-       // galleryGridView = view.findViewById(R.id.galleryGridView);
-        // Inflate the layout for this fragment
+    // galleryGridView = view.findViewById(R.id.galleryGridView);
+    // Inflate the layout for this fragment
 //        return view;
 //    }
 
@@ -165,7 +166,7 @@ public class GalleryFragment extends Fragment {
             return xml;
         }
 
-//         얘는 뭐하는 애일까....? 어답터 같긴 한데......
+        //         얘는 뭐하는 애일까....? 어답터 같긴 한데......
         @Override
         protected void onPostExecute(String xml) {
             System.out.println("===================");
@@ -215,21 +216,30 @@ public class GalleryFragment extends Fragment {
 
 }
 
-class AlbumAdapter extends BaseAdapter{
+class AlbumAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;
 
-    public AlbumAdapter(Activity a, ArrayList<HashMap<String, String>>d){
+    public AlbumAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
         activity = a;
         data = d;
     }
-    public int getCount(){return data.size();}
-    public Object getItem(int position){return position;}
-    public long getItemId(int position){return position;}
 
-    public View getView(int position, View convertView, ViewGroup parent){
+    public int getCount() {
+        return data.size();
+    }
+
+    public Object getItem(int position) {
+        return position;
+    }
+
+    public long getItemId(int position) {
+        return position;
+    }
+
+    public View getView(int position, View convertView, ViewGroup parent) {
         AlbumViewHolder holder = null;
-        if (convertView == null){
+        if (convertView == null) {
             holder = new AlbumViewHolder();
             convertView = LayoutInflater.from(activity).inflate(R.layout.fragment_gallery_album_row, parent, false);
 
@@ -238,14 +248,14 @@ class AlbumAdapter extends BaseAdapter{
             holder.gallery_title = (TextView) convertView.findViewById(R.id.gallery_title);
 
             convertView.setTag(holder);
-        }else{
-            holder= (AlbumViewHolder) convertView.getTag();
+        } else {
+            holder = (AlbumViewHolder) convertView.getTag();
         }
         holder.galleryImage.setId(position);
         holder.gallery_count.setId(position);
         holder.gallery_title.setId(position);
 
-        HashMap<String, String> song = new HashMap < String, String > ();
+        HashMap<String, String> song = new HashMap<String, String>();
         song = data.get(position);
         try {
             holder.gallery_title.setText(song.get(Function.KEY_ALBUM));
@@ -256,7 +266,8 @@ class AlbumAdapter extends BaseAdapter{
                     .into(holder.galleryImage);
 
 
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
         return convertView;
 
     }

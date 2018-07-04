@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<AbsoluteLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp">
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="1dp"
+        android:layout_y="0dp"
+        android:text="Destination"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:layout_x="117dp"
+        android:layout_y="0dp"
+        app:srcCompat="@drawable/ic_distance"
+        tools:layout_editor_absoluteX="125dp" />
+
+    <TextView
+        android:id="@+id/text_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_x="169dp"
+        android:layout_y="11dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="47dp"
+        android:layout_height="31dp"
+        android:layout_x="236dp"
+        android:layout_y="8dp"
+        app:srcCompat="@drawable/ic_clock"
+        tools:layout_editor_absoluteX="238dp"
+        tools:layout_editor_absoluteY="12dp" />
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="64dp"
+        android:layout_height="23dp"
+        android:layout_x="289dp"
+        android:layout_y="13dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="292dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="384dp"
+        android:layout_height="462dp"
+        android:layout_x="0dp"
+        android:layout_y="50dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+</AbsoluteLayout>

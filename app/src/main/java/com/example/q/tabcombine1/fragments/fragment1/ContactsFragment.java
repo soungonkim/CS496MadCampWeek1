@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,7 +31,7 @@ public class ContactsFragment extends Fragment implements View.OnClickListener {
 
     ArrayList<Map<String, String>> dataList;
     ListView mListview;
-    Button mBtnAddress;
+    FloatingActionButton mBtnAddress;
 
     public ContactsFragment() {
         // Required empty public constructor

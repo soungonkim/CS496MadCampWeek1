@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">TabCombine1</string>
+    <string name="app_name">ForMAD</string>
     <string name="tab_text_1">Contacts</string>
     <string name="tab_text_2">Gallery</string>
-    <string name="tab_text_3">Google Maps</string>
+    <string name="tab_text_3">Maps</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCfGPLdwJ-v6KAm5v_w5e5Bvu-YwP2QyEc</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyA6taqW1GK3dJH5KHCyQglXuMlMRF80qg8</string>
 </resources>

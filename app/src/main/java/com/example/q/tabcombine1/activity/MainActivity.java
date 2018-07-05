@@ -18,7 +18,7 @@ import com.example.q.tabcombine1.fragments.fragment2.GalleryFragment;
 import com.example.q.tabcombine1.fragments.fragment3.FreeFragment;
 
 public class MainActivity extends AppCompatActivity{
-    private Toolbar toolbar;
+   private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = (ViewPager) findViewById(R.id.container);
         setupViewPager(viewPager);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity{
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ContactsFragment(), "CONTACTS");
         adapter.addFragment(new GalleryFragment(), "GALLERY");
-        adapter.addFragment(new FreeFragment(), "FREE");
+        adapter.addFragment(new FreeFragment(), "MAPS");
         viewPager.setAdapter(adapter);
     }
 

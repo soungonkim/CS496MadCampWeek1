@@ -20,7 +20,7 @@
         android:title="궁동 로데오거리"/>
     <item
         android:id="@+id/m7"
-        android:title="어은동 한빛교회"/>
+        android:title="어은동 통통왕숯불구이"/>
     <item
         android:id="@+id/m8"
         android:title="기숙사"/>

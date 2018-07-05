@@ -114,7 +114,7 @@ public class GalleryFragment extends Fragment {
             galleryGridView.setColumnWidth(Math.round(px));
         }
 
-        String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE};
+        String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE, Manifest.permission.ACCESS_FINE_LOCATION};
 
         // Permission 없으면 권한 요청
         if (!Function.hasPermissions(getActivity(), PERMISSIONS)) {

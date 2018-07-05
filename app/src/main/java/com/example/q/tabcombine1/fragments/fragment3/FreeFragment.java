@@ -2,7 +2,7 @@ package com.example.q.tabcombine1.fragments.fragment3;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,7 +26,6 @@ import com.google.android.gms.location.places.PlaceDetectionClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import android.content.ActivityNotFoundException;
 
 import android.view.MenuItem;
 import android.widget.Button;
@@ -33,14 +33,12 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-
 import java.lang.Math;
+
 import com.example.q.tabcombine1.R;
-import com.google.android.gms.maps.OnMapReadyCallback;
 
 
-public class FreeFragment extends Fragment implements OnMapReadyCallback{
+public class FreeFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     GeoDataClient mGeoDataClient;
@@ -68,7 +66,7 @@ public class FreeFragment extends Fragment implements OnMapReadyCallback{
     LatLng eastRes = new LatLng(36.369180, 127.363580);
     LatLng lotte = new LatLng(36.361910, 127.379042);
     LatLng gungdong = new LatLng(36.362309, 127.351120);
-    LatLng aeundong = new LatLng(36.364016, 127.358699);
+    LatLng aeundong = new LatLng(36.363493, 127.358705);
     LatLng kaistdorm = new LatLng(36.373604, 127.357537);
 
     double yourlat, yourlng;
@@ -118,56 +116,71 @@ public class FreeFragment extends Fragment implements OnMapReadyCallback{
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.m1:
-                                Toast.makeText(getActivity().getApplicationContext(), "KAIST N1", Toast.LENGTH_SHORT).show();
+                                Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "KAIST N1", Toast.LENGTH_SHORT);
+                                toast1.setGravity(Gravity.CENTER, 0, +120);
+                                toast1.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.374438, 127.365583) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.374438, 127.365583)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kaistN1, 15));
 
                                 break;
                             case R.id.m2:
-                                Toast.makeText(getActivity().getApplicationContext(), "북측식당", Toast.LENGTH_SHORT).show();
+                                Toast toast2 = Toast.makeText(getActivity().getApplicationContext(), "북측식당", Toast.LENGTH_SHORT);
+                                toast2.setGravity(Gravity.CENTER, 0, +120);
+                                toast2.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.373669, 127.359132) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.373669, 127.359132)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(northRes, 15));
 
                                 break;
                             case R.id.m3:
-                                Toast.makeText(getActivity().getApplicationContext(), "서측식당", Toast.LENGTH_SHORT).show();
+                                Toast toast3 = Toast.makeText(getActivity().getApplicationContext(), "서측식당", Toast.LENGTH_SHORT);
+                                toast3.setGravity(Gravity.CENTER, 0, +120);
+                                toast3.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.366932, 127.360485) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.366932, 127.360485)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(westRes, 15));
 
                                 break;
                             case R.id.m4:
-                                Toast.makeText(getActivity().getApplicationContext(), "동측식당", Toast.LENGTH_SHORT).show();
+                                Toast toast4 = Toast.makeText(getActivity().getApplicationContext(), "동측식당", Toast.LENGTH_SHORT);
+                                toast4.setGravity(Gravity.CENTER, 0, +120);
+                                toast4.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.369180, 127.363580) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.369180, 127.363580)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eastRes, 15));
 
                                 break;
                             case R.id.m5:
-                                Toast.makeText(getActivity().getApplicationContext(), "둔산동 롯데시네마", Toast.LENGTH_SHORT).show();
+                                Toast toast5 = Toast.makeText(getActivity().getApplicationContext(), "둔산동 롯데시네마", Toast.LENGTH_SHORT);
+                                toast5.setGravity(Gravity.CENTER, 0, +120);
+                                toast5.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.361910, 127.379042) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.361910, 127.379042)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lotte, 15));
-
                                 break;
                             case R.id.m6:
-                                Toast.makeText(getActivity().getApplicationContext(), "궁동 로데오거리", Toast.LENGTH_SHORT).show();
+                                Toast toast6 = Toast.makeText(getActivity().getApplicationContext(), "궁동 로데오거리", Toast.LENGTH_SHORT);
+                                toast6.setGravity(Gravity.CENTER, 0, +120);
+                                toast6.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.362309, 127.351120) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.362309, 127.351120)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(gungdong, 15));
 
                                 break;
                             case R.id.m7:
-                                Toast.makeText(getActivity().getApplicationContext(), "어은동 한빛교회", Toast.LENGTH_SHORT).show();
-                                distance.setText(distanceLatLong2(yourlat, yourlng, 36.364016, 127.358699) + " m");
-                                tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.364016, 127.358699)) + " min");
+                                Toast toast7 = Toast.makeText(getActivity().getApplicationContext(), "어은동 통통왕숯불구이", Toast.LENGTH_SHORT);
+                                toast7.setGravity(Gravity.CENTER, 0, +120);
+                                toast7.show();
+                                distance.setText(distanceLatLong2(yourlat, yourlng, 36.363493, 127.358705) + " m");
+                                tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.363493, 127.358705)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(aeundong, 15));
 
                                 break;
                             case R.id.m8:
-                                Toast.makeText(getActivity().getApplicationContext(), "기숙사", Toast.LENGTH_SHORT).show();
+                                Toast toast8 = Toast.makeText(getActivity().getApplicationContext(), "기숙사", Toast.LENGTH_SHORT);
+                                toast8.setGravity(Gravity.CENTER, 0, +120);
+                                toast8.show();
                                 distance.setText(distanceLatLong2(yourlat, yourlng, 36.373604, 127.357537) + " m");
                                 tm.setText(calTime(distanceLatLong2(yourlat, yourlng, 36.373604, 127.357537)) + " min");
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kaistdorm, 15));
@@ -187,7 +200,7 @@ public class FreeFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.addMarker(new MarkerOptions().position(kaistN1).title("N1").icon(BitmapDescriptorFactory.fromResource(R.drawable.pushpin)));
+        mMap.addMarker(new MarkerOptions().position(kaistN1).title("N1"));
         mMap.addMarker(new MarkerOptions().position(northRes).title("북측식당"));
         mMap.addMarker(new MarkerOptions().position(westRes).title("서측식당"));
         mMap.addMarker(new MarkerOptions().position(eastRes).title("동측식당"));
@@ -233,8 +246,8 @@ public class FreeFragment extends Fragment implements OnMapReadyCallback{
 
     public static String calTime(String distance) {
         double dist = Double.parseDouble(distance);
-        double time = dist / 80;
-        return Double.toString(Math.round(time*10d)/10d);
+        double time = dist / 70;
+        return Double.toString(Math.round(time * 10d) / 10d);
     }
 
 

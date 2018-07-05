@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" android:paddingLeft="10dp"
+    android:layout_height="fill_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:paddingTop="10dp">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Address"
-        android:id="@+id/btnAddress"/>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnAddress"
+        android:layout_width="98dp"
+        android:layout_height="63dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search"/>
+
 
     <ListView
+        android:id="@+id/listview"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnAddress"
-        android:id="@+id/listview" />
-</RelativeLayout>
+        android:layout_below="@id/btnAddress" />
+
+</android.support.constraint.ConstraintLayout>

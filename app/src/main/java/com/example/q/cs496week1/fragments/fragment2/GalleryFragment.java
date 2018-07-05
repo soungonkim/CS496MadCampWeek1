@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.fragments.fragment2;
+package com.example.q.cs496week1.fragments.fragment2;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-import com.example.q.tabcombine1.R;
+import com.example.q.cs496week1.R;
 
 
 public class GalleryFragment extends Fragment {

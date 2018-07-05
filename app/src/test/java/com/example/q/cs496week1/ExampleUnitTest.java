@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1;
+package com.example.q.cs496week1;
 
 import org.junit.Test;
 

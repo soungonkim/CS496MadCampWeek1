@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.fragments.fragment1;
+package com.example.q.cs496week1.fragments.fragment1;
 
 import android.Manifest;
 import android.content.Context;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.q.tabcombine1.R;
+import com.example.q.cs496week1.R;
 
 
 public class ContactsFragment extends Fragment implements View.OnClickListener {

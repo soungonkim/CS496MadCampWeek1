@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.fragments.fragment2;
+package com.example.q.cs496week1.fragments.fragment2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import java.io.File;
-import com.example.q.tabcombine1.R;
+import com.example.q.cs496week1.R;
 public class GalleryPreview extends AppCompatActivity {
 
     ImageView GalleryPreviewImg;

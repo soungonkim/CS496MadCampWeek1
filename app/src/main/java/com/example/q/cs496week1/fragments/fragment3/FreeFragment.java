@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.fragments.fragment3;
+package com.example.q.cs496week1.fragments.fragment3;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,7 +35,7 @@ import android.widget.Toast;
 
 import java.lang.Math;
 
-import com.example.q.tabcombine1.R;
+import com.example.q.cs496week1.R;
 
 
 public class FreeFragment extends Fragment implements OnMapReadyCallback {
@@ -206,7 +206,7 @@ public class FreeFragment extends Fragment implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(eastRes).title("동측식당"));
         mMap.addMarker(new MarkerOptions().position(lotte).title("둔산동 롯데시네마"));
         mMap.addMarker(new MarkerOptions().position(gungdong).title("궁동 로데오거리"));
-        mMap.addMarker(new MarkerOptions().position(aeundong).title("어은동 한빛교회"));
+        mMap.addMarker(new MarkerOptions().position(aeundong).title("어은동 통통왕숯불구이"));
         mMap.addMarker(new MarkerOptions().position(kaistdorm).title("기숙사"));
 
         //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kaistN1, 15));

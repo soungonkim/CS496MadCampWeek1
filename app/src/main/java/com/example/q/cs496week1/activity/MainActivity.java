@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.activity;
+package com.example.q.cs496week1.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -12,18 +12,18 @@ import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.q.tabcombine1.R;
-import com.example.q.tabcombine1.fragments.fragment1.ContactsFragment;
-import com.example.q.tabcombine1.fragments.fragment2.GalleryFragment;
-import com.example.q.tabcombine1.fragments.fragment3.FreeFragment;
+import com.example.q.cs496week1.R;
+import com.example.q.cs496week1.fragments.fragment1.ContactsFragment;
+import com.example.q.cs496week1.fragments.fragment2.GalleryFragment;
+import com.example.q.cs496week1.fragments.fragment3.FreeFragment;
 
-public class MainActivity extends AppCompatActivity{
-   private Toolbar toolbar;
+public class MainActivity extends AppCompatActivity {
+    private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity{
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    private void setupViewPager(ViewPager viewPager){
+    private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ContactsFragment(), "CONTACTS");
         adapter.addFragment(new GalleryFragment(), "GALLERY");
@@ -45,16 +45,16 @@ public class MainActivity extends AppCompatActivity{
         viewPager.setAdapter(adapter);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter{
+    class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        public ViewPagerAdapter(FragmentManager manager){
+        public ViewPagerAdapter(FragmentManager manager) {
             super(manager);
         }
 
         @Override
-        public Fragment getItem(int position){
+        public Fragment getItem(int position) {
             return mFragmentList.get(position);
         }
 
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity{
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.q.tabcombine1">
+    package="com.example.q.cs496week1">
 
     <uses-feature android:name="android.hardware.camera"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>

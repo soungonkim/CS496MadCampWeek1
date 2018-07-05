@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.fragments.fragment2;
+package com.example.q.cs496week1.fragments.fragment2;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,7 +20,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.q.tabcombine1.R;
+import com.example.q.cs496week1.R;
 
 import java.io.File;
 import java.util.ArrayList;

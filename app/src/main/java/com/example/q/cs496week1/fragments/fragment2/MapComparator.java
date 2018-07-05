@@ -1,4 +1,4 @@
-package com.example.q.tabcombine1.fragments.fragment2;
+package com.example.q.cs496week1.fragments.fragment2;
 
 import java.util.Comparator;
 import java.util.HashMap;

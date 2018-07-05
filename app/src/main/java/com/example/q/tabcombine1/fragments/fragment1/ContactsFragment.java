@@ -25,10 +25,6 @@ import java.util.Map;
 
 import com.example.q.tabcombine1.R;
 
-//import com.example.q.tabcombine1.activity.SimpleTabsActivity;
-//
-//import info.androidhive.materialtabs.activity.SimpleTabsActivity;
-
 
 public class ContactsFragment extends Fragment implements View.OnClickListener {
 
